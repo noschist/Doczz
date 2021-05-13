@@ -1,0 +1,106 @@
+﻿<Page x:Class="Doczz.CustomPages.DashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Doczz.CustomPages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      Background="{DynamicResource SideBG}"
+      TextElement.FontSize="14"
+      FontFamily="/Doczz;component/Fonts/Raleway/#Raleway"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DashboardPage">
+    <Grid>
+        <StackPanel>
+            <TextBlock Margin="0 10 0 0" Text="My Folders" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" FontSize="20" />
+            <StackPanel x:Name="FileSummaryHolder" Orientation="Horizontal" Margin="0 25">
+                <Border Width="180" Height="150" CornerRadius="15" Background="{StaticResource SepMenu}">
+                    <StackPanel>
+                        <DockPanel LastChildFill="False" Margin="12 20">
+                            <iconPacks:PackIconEntypo Kind="FolderImages" Foreground="#DD00AEFF" Width="40" Height="Auto" />
+                            <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
+                                <ListBox>
+                                    <ListBoxItem>
+                                        Delete Contents
+                                    </ListBoxItem>
+                                    <ListBoxItem>
+                                        Hide Folder
+                                    </ListBoxItem>
+                                </ListBox>
+                            </materialDesign:PopupBox>
+                        </DockPanel>
+                        <TextBlock Text="Images" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" FontSize="18" Margin="12 14 0 0"/>
+                        <DockPanel LastChildFill="False" Margin="12 8 15 20">
+                            <TextBlock x:Name="ImgCount" Text="0 Files" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway Light" FontSize="18"/>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <Border Margin="25 0" Width="180" Height="150" CornerRadius="15" Background="{StaticResource SepMenu}">
+                    <StackPanel>
+                        <DockPanel LastChildFill="False" Margin="12 20">
+                            <iconPacks:PackIconEntypo Kind="FolderVideo" Foreground="#DD483FFF" Width="40" Height="Auto" />
+                            <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
+                                <ListBox>
+                                    <ListBoxItem>
+                                        Delete Contents
+                                    </ListBoxItem>
+                                    <ListBoxItem>
+                                        Hide Folder
+                                    </ListBoxItem>
+                                </ListBox>
+                            </materialDesign:PopupBox>
+                        </DockPanel>
+                        <TextBlock Text="Videos" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" FontSize="18" Margin="12 14 0 0"/>
+                        <DockPanel LastChildFill="False" Margin="12 8 15 20">
+                            <TextBlock x:Name="VidCount" Text="0 Files" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway Light" FontSize="18"/>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <Border Width="180" Height="150" CornerRadius="15" Background="{StaticResource SepMenu}">
+                    <StackPanel>
+                        <DockPanel LastChildFill="False" Margin="12 20">
+                            <iconPacks:PackIconEntypo Kind="FolderMusic" Foreground="#DDFF5100" Width="40" Height="Auto" />
+                            <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
+                                <ListBox>
+                                    <ListBoxItem>
+                                        Delete Contents
+                                    </ListBoxItem>
+                                    <ListBoxItem>
+                                        Hide Folder
+                                    </ListBoxItem>
+                                </ListBox>
+                            </materialDesign:PopupBox>
+                        </DockPanel>
+                        <TextBlock Text="Music" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" FontSize="18" Margin="12 14 0 0"/>
+                        <DockPanel LastChildFill="False" Margin="12 8 15 20">
+                            <TextBlock x:Name="MusCount" Text="0 Files" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway Light" FontSize="18"/>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <Border Margin="25 0" Width="180" Height="150" CornerRadius="15" Background="{StaticResource SepMenu}">
+                    <StackPanel>
+                        <DockPanel LastChildFill="False" Margin="12 20">
+                            <iconPacks:PackIconEntypo Kind="Folder" Foreground="#DD57B20B" Width="40" Height="Auto" />
+                            <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
+                                <ListBox>
+                                    <ListBoxItem>
+                                        Delete Contents
+                                    </ListBoxItem>
+                                    <ListBoxItem>
+                                        Hide Folder
+                                    </ListBoxItem>
+                                </ListBox>
+                            </materialDesign:PopupBox>
+                        </DockPanel>
+                        <TextBlock Text="Documents" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" FontSize="18" Margin="12 14 0 0"/>
+                        <DockPanel LastChildFill="False" Margin="12 8 15 20">
+                            <TextBlock x:Name="DocCount" Text="0 Files" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway Light" FontSize="18"/>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

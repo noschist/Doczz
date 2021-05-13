@@ -1,0 +1,53 @@
+﻿<Window x:Class="Doczz.CustomWindow.AboutUsUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Doczz.CustomWindow"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             Background="#99000000"
+             TextElement.FontSize="14" PreviewMouseDown="Grid_PreviewMouseDown"
+             FontFamily="/Doczz;component/Fonts/Raleway/#Raleway" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+           WindowStartupLocation="CenterOwner" WindowState="Normal" WindowStyle="None" AllowsTransparency="True" ShowInTaskbar="False">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Background="#CC000000" PreviewMouseDown="Grid_PreviewMouseDown">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Background="#fff">
+                <StackPanel Orientation="Horizontal">
+                    <Image StretchDirection="DownOnly" Source="/Doczz;component/Images/me.jpg" VerticalAlignment="Center"/>
+                    <StackPanel Margin="20">
+                        <TextBlock VerticalAlignment="Center" Text="Sreekumar Vijayakumar" Foreground="Black" FontSize="20"/>
+                        <TextBlock VerticalAlignment="Center" Text="AM.EN.U4CSE18152" Foreground="Black" FontSize="15" Margin="0 5"/>
+                        <TextBlock VerticalAlignment="Center" Text="github.com/noschist" Foreground="Black" FontSize="15"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1" Background="#FF6EC6FF" Margin="0 10">
+                <StackPanel Orientation="Horizontal">
+                    <Image StretchDirection="DownOnly" Source="/Doczz;component/Images/deepak.jpg" Width="121" VerticalAlignment="Center"/>
+                    <StackPanel Margin="20">
+                        <TextBlock VerticalAlignment="Center" Text="Deepak Naik M V" Foreground="Black" FontSize="20"/>
+                        <TextBlock VerticalAlignment="Center" Text="AM.EN.U4CSE18114" Foreground="Black" FontSize="15" Margin="0 5"/>
+                        <TextBlock VerticalAlignment="Center" Text="github.com/deepaknaikmv" Foreground="Black" FontSize="15"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2" Background="#fff">
+                <StackPanel Orientation="Horizontal">
+                    <Image StretchDirection="DownOnly" Source="/Doczz;component/Images/pavan.jpg" Width="121" VerticalAlignment="Center"/>
+                    <StackPanel Margin="20">
+                        <TextBlock VerticalAlignment="Center" Text="M Pavan Kalyan" Foreground="Black" FontSize="20"/>
+                        <TextBlock VerticalAlignment="Center" Text="AM.EN.U4CSE18165" Foreground="Black" FontSize="15" Margin="0 5"/>
+                        <TextBlock VerticalAlignment="Center" Text="github.com/pavan1246" Foreground="Black" FontSize="15"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

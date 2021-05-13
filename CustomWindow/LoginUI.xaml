@@ -1,0 +1,115 @@
+﻿<Window x:Class="Doczz.CustomWindow.LoginUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Doczz.CustomWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontSize="14"
+        FontFamily="/Doczz;component/Fonts/Raleway/#Raleway" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks" xmlns:customcontrols="clr-namespace:Doczz.CustomControls"
+        mc:Ignorable="d"
+        Background="Transparent"
+        Icon="/Doczz;component/Images/logo256.png"
+        Title="LoginUI" Height="720" AllowsTransparency="True" Width="1280" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Loaded="Window_Loaded">
+    <Border CornerRadius="30" Background="White">
+        <Border.OpacityMask>
+            <VisualBrush>
+                <VisualBrush.Visual>
+                    <Border 
+                    Background="White"
+                    SnapsToDevicePixels="True"
+                    CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource AncestorType=Border}}"
+                    Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Border}}"
+                    Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Border}}"
+                    />
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Border.OpacityMask>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Doczz;component/Images/loginsplash.png" Grid.Column="0" HorizontalAlignment="Left"/>
+            <Grid x:Name="CreateAccGrid" Visibility="Collapsed" Grid.Column="1" Margin="0 30 40 0">
+                <TextBlock HorizontalAlignment="Right" FontSize="17">
+                    <Run Text="Already have an account?"/>
+                    <Run x:Name="SwitchToLogin" Text="Login" PreviewMouseUp="SwitchToLogin_PreviewMouseUp" Foreground="#FF2397E2"/>
+                </TextBlock>
+                <StackPanel Margin="0 60 0 40">
+                    <TextBlock Text="Create account" FontSize="35" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" />
+                    <TextBlock Text="Username" FontSize="20" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Margin="0 30 0 0"/>
+                    <Border Padding="20 10" MaxWidth="550" Width="550" Height="60" Margin="0 10" HorizontalAlignment="Left" CornerRadius="15" Background="#FFF6F6F6" >
+                        <TextBox x:Name="createUser" Margin="0" Foreground="#DD515151" materialDesign:HintAssist.Hint="John" FontSize="16" VerticalAlignment="Center" BorderThickness="0" BorderBrush="{x:Null}"/>
+                    </Border>
+                    <TextBlock Text="Email" FontSize="20" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Margin="0 20 0 0"/>
+                    <Border Padding="20 10" MaxWidth="550" Width="550" Height="60" Margin="0 10" HorizontalAlignment="Left" CornerRadius="15" Background="#FFF6F6F6" >
+                        <TextBox x:Name="createEmail" Margin="0" Foreground="#DD515151" materialDesign:HintAssist.Hint="abc@xyz.com" FontSize="16" VerticalAlignment="Center" BorderThickness="0" BorderBrush="{x:Null}"/>
+                    </Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="Password" FontSize="20" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Margin="0 20 0 0"/>
+                            <Border Padding="20 10" MaxWidth="248" Width="248" Height="60" Margin="0 10" HorizontalAlignment="Left" CornerRadius="15" Background="#FFF6F6F6" >
+                                <PasswordBox x:Name="createPass" Margin="0" Foreground="#DD515151" FontSize="16" VerticalAlignment="Center" BorderThickness="0" BorderBrush="{x:Null}"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Confirm" FontSize="20" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Margin="0 20 0 0"/>
+                            <Border Padding="20 10" MaxWidth="248" Width="248" Height="60" Margin="0 10" HorizontalAlignment="Left" CornerRadius="15" Background="#FFF6F6F6" >
+                                <PasswordBox x:Name="createPassRep" Margin="0" Foreground="#DD515151" FontSize="16" VerticalAlignment="Center" BorderThickness="0" BorderBrush="{x:Null}"/>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                    <Button x:Name="CreateAccBtn" Click="CreateAccBtn_Click" materialDesign:ButtonAssist.CornerRadius="15" Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Create account" Height="45" Margin="0 20 53 0" Foreground="White" FontSize="17" FontWeight="Normal" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold"/>
+                    <TextBlock Text="or" HorizontalAlignment="Center" FontSize="18" Margin="0 15 53 0" Foreground="#DD515151"/>
+                    <Button x:Name="ExitBtn" Click="ExitBtn_Click" materialDesign:ButtonAssist.CornerRadius="15" Style="{StaticResource MaterialDesignOutlinedButton}" Content="Exit application" Height="45" Margin="0 20 53 0" Foreground="#FF2397E2" FontSize="17" FontWeight="Normal" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold"/>
+                </StackPanel>
+            </Grid>
+            <Grid Visibility="Visible" x:Name="LoginAccGrid" Grid.Column="1" Margin="0 30 40 0">
+                <TextBlock HorizontalAlignment="Right" FontSize="17">
+                    <Run Text="Don't have an account?"/>
+                    <Run x:Name="SwitchToCreateAcc" PreviewMouseUp="SwitchToCreateAcc_PreviewMouseUp" Text="Create account" Foreground="#FF2397E2"/>
+                </TextBlock>
+                <StackPanel Margin="0 60 0 40">
+                    <TextBlock Text="Login" FontSize="35" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" />
+                    <TextBlock Text="Email" FontSize="20" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Margin="0 30 0 0"/>
+                    <Border Padding="20 10" MaxWidth="550" Width="550" Height="60" Margin="0 10" HorizontalAlignment="Left" CornerRadius="15" Background="#FFF6F6F6" >
+                        <TextBox Margin="0" x:Name="loginUserEmail" Foreground="#DD515151" FontSize="16" VerticalAlignment="Center" BorderThickness="0" BorderBrush="{x:Null}"/>
+                    </Border>
+                    <TextBlock Text="Password" FontSize="20" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Margin="0 20 0 0"/>
+                    <Border Padding="20 10" MaxWidth="550" Width="550" Height="60" Margin="0 10" HorizontalAlignment="Left" CornerRadius="15" Background="#FFF6F6F6" >
+                        <PasswordBox Margin="0" x:Name="loginPass" Foreground="#DD515151" FontSize="16" VerticalAlignment="Center" BorderThickness="0" BorderBrush="{x:Null}"/>
+                    </Border>
+                    <CheckBox x:Name="RemMeChck" Content="Remember me" Style="{StaticResource MaterialDesignDarkCheckBox}" FontSize="18" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Margin="0 20 0 20"/>
+                    <Button x:Name="LoginAccBtn" Click="LoginAccBtn_Click" materialDesign:ButtonAssist.CornerRadius="15" Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Login" Height="45" Margin="0 20 53 0" Foreground="White" FontSize="17" FontWeight="Normal" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold"/>
+                    <TextBlock Text="or" HorizontalAlignment="Center" FontSize="18" Margin="0 15 53 0" Foreground="#DD515151"/>
+                    <Button x:Name="ExitLoginBtn" Click="ExitBtn_Click" materialDesign:ButtonAssist.CornerRadius="15" Style="{StaticResource MaterialDesignOutlinedButton}" Content="Exit application" Height="45" Margin="0 20 53 0" Foreground="#FF2397E2" FontSize="17" FontWeight="Normal" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold"/>
+                </StackPanel>
+            </Grid>
+            <Grid Visibility="Collapsed" x:Name="CreateAccStage2Grid" Grid.Column="1" Margin="0 30 40 0">
+                <StackPanel Margin="0 60 0 40">
+                    <TextBlock Text="FTP Server details" FontSize="35" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" />
+                    <TextBlock Text="You may connect anonymously if you don't specify username or password but not all servers support it. Make sure your server allows it." FontSize="15" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Margin="0 20 150 0" TextWrapping="Wrap" Foreground="#DD999999"/>
+                    <TextBlock Text="Host*" FontSize="20" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Margin="0 30 0 0"/>
+                    <Border Padding="20 10" MaxWidth="550" Width="550" Height="60" Margin="0 10" HorizontalAlignment="Left" CornerRadius="15" Background="#FFF6F6F6" >
+                        <TextBox x:Name="ftpHost" Margin="0" Foreground="#DD515151" materialDesign:HintAssist.Hint="127.0.0.1" FontSize="16" VerticalAlignment="Center" BorderThickness="0" BorderBrush="{x:Null}"/>
+                    </Border>
+                    <TextBlock Text="Username (ftp server)" FontSize="20" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Margin="0 20 0 0"/>
+                    <Border Padding="20 10" MaxWidth="550" Width="550" Height="60" Margin="0 10" HorizontalAlignment="Left" CornerRadius="15" Background="#FFF6F6F6" >
+                        <TextBox x:Name="ftpUser" Margin="0" Foreground="#DD515151" materialDesign:HintAssist.Hint="Leave blank if empty" FontSize="16" VerticalAlignment="Center" BorderThickness="0" BorderBrush="{x:Null}"/>
+                    </Border>
+                    <TextBlock Text="Password (ftp server)" FontSize="20" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Margin="0 20 0 0"/>
+                    <Border Padding="20 10" MaxWidth="550" Width="550" Height="60" Margin="0 10" HorizontalAlignment="Left" CornerRadius="15" Background="#FFF6F6F6" >
+                        <PasswordBox x:Name="ftpPass" Margin="0" Foreground="#DD515151" materialDesign:HintAssist.Hint="Leave blank if empty" FontSize="16" VerticalAlignment="Center" BorderThickness="0" BorderBrush="{x:Null}"/>
+                    </Border>
+                    <Button x:Name="SaveDetBtn" Click="SaveDetBtn_Click" materialDesign:ButtonAssist.CornerRadius="15" Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Save details" Height="45" Margin="0 20 53 0" Foreground="White" FontSize="17" FontWeight="Normal" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

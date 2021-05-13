@@ -1,0 +1,50 @@
+﻿<Page x:Class="Doczz.CustomPages.MyFilesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Doczz.CustomPages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.FontWeight="Medium"
+      TextElement.FontSize="14"
+      FontFamily="{materialDesign:MaterialDesignFont}"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      mc:Ignorable="d" 
+      Background="{DynamicResource SideBG}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MyFilesPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="FolderHolder">
+            <DockPanel LastChildFill="False" VerticalAlignment="Top">
+                <TextBlock Text="Folders" Foreground="{DynamicResource MenuFore}" VerticalAlignment="Center" Margin="0 0 25 0"/>
+                <Button x:Name="AddFolderBtn" Click="AddFolderBtn_Click" Style="{StaticResource MaterialDesignIconForegroundButton}" ToolTip="Create Folder" DockPanel.Dock="Right" Foreground="{DynamicResource MenuFore}">
+                    <iconPacks:PackIconMaterialDesign Kind="CreateNewFolder" Height="auto" Width="20"/>
+                </Button>
+                <Button x:Name="UploadFileBtn" Click="UploadFileBtn_Click" Style="{StaticResource MaterialDesignIconForegroundButton}" ToolTip="Upload files" DockPanel.Dock="Right" Foreground="{DynamicResource MenuFore}">
+                    <iconPacks:PackIconFeatherIcons Kind="UploadCloud" Height="auto" Width="20"/>
+                </Button>
+                <Button Click="DeleteFolderBtn_Click" x:Name="DeleteFolderBtn" Style="{StaticResource MaterialDesignIconForegroundButton}" ToolTip="Delete Folder" DockPanel.Dock="Right" Foreground="{DynamicResource MenuFore}">
+                    <iconPacks:PackIconRemixIcon Kind="DeleteBin6Fill" Height="auto" Width="20"/>
+                </Button>
+            </DockPanel>
+            <Separator BorderBrush="gray" Foreground="#FFBFBFBF" Margin="0 0 0 10"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <StackPanel CanHorizontallyScroll="True" CanVerticallyScroll="True">
+                    <TreeView MinWidth="220" x:Name="FolderTreeView" SelectedItemChanged="FolderTreeView_SelectedItemChanged">
+
+                    </TreeView>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+        <ScrollViewer Grid.Column="1" Margin="10 0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="FileContainer"  CanVerticallyScroll="True">
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
