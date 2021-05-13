@@ -1,0 +1,77 @@
+﻿<Window x:Class="Doczz.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MainBG}"
+        TextElement.FontSize="14"
+        Icon="Images/logo256.png"
+        FontFamily="/Doczz;component/Fonts/Raleway/#Raleway"
+        xmlns:local="clr-namespace:Doczz" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks" xmlns:customcontrols="clr-namespace:Doczz.CustomControls"
+        mc:Ignorable="d"
+        Title="DOCzz | Dashboard" Height="563" Width="1000" MinHeight="720" MinWidth="1280" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="DOCzz" Foreground="{DynamicResource LogoCol}" HorizontalAlignment="Center" Margin="0 30" FontSize="30" FontFamily="/Doczz;component/Fonts/#ONE DAY"/>
+        <Border CornerRadius="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="35 20 20 20" BorderThickness="3" BorderBrush="{DynamicResource SepMenu}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border x:Name="DashMenuBtn" PreviewMouseUp="DashMenuBtn_PreviewMouseUp" Grid.Row="0" Padding="18 25" BorderThickness="0 0 0 2" BorderBrush="#EDF0F5" Background="White" CornerRadius="30 30 0 0" Cursor="Hand">
+                    <StackPanel>
+                        <iconPacks:PackIconPixelartIcons x:Name="DashIco" Foreground="#FF3390FF" Kind="Dashbaord" Width="28" HorizontalAlignment="Center" Height="auto"/>
+                        <TextBlock Text="Dashboard" x:Name="DashTxt" Foreground="#FF3390FF" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 15 0 -15"/>
+                    </StackPanel>
+                </Border>
+                <Border x:Name="FileMenuBtn" PreviewMouseUp="FileMenuBtn_PreviewMouseUp" Grid.Row="1" Padding="18 25" BorderThickness="0 0 0 2" BorderBrush="#EDF0F5" Background="Transparent" Cursor="Hand">
+                    <StackPanel>
+                        <iconPacks:PackIconFeatherIcons x:Name="FileIco" Kind="Cloud" Foreground="#FFA8B1C9" Width="28" HorizontalAlignment="Center" Height="auto"/>
+                        <TextBlock Text="My Files" x:Name="FileTxt" Foreground="#FFA8B1C9" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 15 0 -15"/>
+                    </StackPanel>
+                </Border>
+                <Border x:Name="SettMenuBtn" PreviewMouseUp="SettMenuBtn_PreviewMouseUp" Grid.Row="2" Padding="18 25" BorderThickness="0 0 0 2" BorderBrush="#EDF0F5" Background="Transparent" Cursor="Hand">
+                    <StackPanel>
+                        <iconPacks:PackIconFeatherIcons x:Name="SettIco" Foreground="#FFA8B1C9" Kind="Settings" Width="28" HorizontalAlignment="Center" Height="auto"/>
+                        <TextBlock Text="Settings" x:Name="SettTxt" Foreground="#FFA8B1C9" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 15 0 -15"/>
+                    </StackPanel>
+                </Border>
+                <Border x:Name="DiscoMenuBtn" PreviewMouseUp="DiscoMenuBtn_PreviewMouseUp" Grid.Row="3" Padding="18 25" BorderThickness="0" BorderBrush="#EDF0F5" Background="Transparent" Cursor="Hand">
+                    <StackPanel>
+                        <iconPacks:PackIconCodicons Foreground="#FFA8B1C9" Kind="DebugDisconnect" Width="28" HorizontalAlignment="Center" Height="auto"/>
+                        <TextBlock Text="Disconnect" Foreground="#FFA8B1C9" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 15 0 -15"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+        <Button x:Name="AboutUsBTn" Click="AboutUsBTn_Click" Margin="35 30 30 30" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignFlatButton}">
+            About Us
+        </Button>
+        <DockPanel Grid.Column="1" Margin="30 20 60 10" VerticalAlignment="Top" LastChildFill="False">
+            <TextBlock FontSize="15">
+                <Run Text="Host : " FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold"/>
+                <Run x:Name="TopBarHost" Text="loading.."/>
+            </TextBlock>
+            <TextBlock FontSize="15" Margin="50 0">
+                <Run Text="Username : " FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold"/>
+                <Run x:Name="TopBarUser" Text="loading.."/>
+            </TextBlock>
+            <TextBlock FontSize="15">
+                <Run Text="Connection Status : " FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold"/>
+                <Run x:Name="TopBarStatus" Text="Connecting.." Foreground="#DD4600AA"/>
+            </TextBlock>
+            <TextBlock x:Name="LogoutBtn" PreviewMouseUp="LogoutBtn_PreviewMouseUp" Text="Logout" DockPanel.Dock="Right" FontFamily="/Doczz;component/Fonts/Raleway/#Raleway SemiBold" Cursor="Hand"/>
+        </DockPanel>
+        <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth2" Grid.Column="1" Margin="30 60 60 40" UniformCornerRadius="30" Background="{DynamicResource SideBG}">
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="30"/>
+        </materialDesign:Card>
+    </Grid>
+</Window>
